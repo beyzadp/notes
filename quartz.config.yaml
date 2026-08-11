@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: localhost
+  baseUrl: beyzadp.github.io/notes
   ignorePatterns:
     - private
     - templates
