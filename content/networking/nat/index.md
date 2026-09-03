@@ -7,4 +7,4 @@ title: "NAT"
 ## the parts
 
 1. **[[01-introduction|How It Works]]**: what nat actually does to a packet, the translation table, and the four nat variants (full cone, restricted cone, port restricted cone, symmetric) and what each means for how hard p2p hole punching is.
-2. **[[02-traversal|Traversal]]**: hole punching, the general technique for getting two nat'd hosts talking directly.
+2. **[[02-traversal|Traversal]]**: hole punching, the general technique for getting two nat'd hosts talking directly, how stun tells you your own public mapping, why symmetric nat breaks that (and when port prediction can still save it), turn as the reliable fallback, and ice as the real protocol name for tying it all together.
