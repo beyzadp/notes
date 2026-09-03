@@ -4,8 +4,6 @@ title: "Building a Bare-Metal RISC-V Kernel from Scratch"
 
 notes from building a small RISC-V kernel from scratch in QEMU, loosely following [1000 line os](https://1000os.seiya.me/en/): the whole path from "empty linker script" to a kernel that boots, traps, schedules processes, talks to a virtio disk, and reads files off a custom filesystem. split into 9 parts, roughly in the order I actually built things, since each part leans on the one before it.
 
-a note on how this was written: i built this whole project myself. a lot of the explanations here came from prompting AI or from research i copied in (including some text adapted from the tutorial above), but i decided what to include, how it's structured, and what examples/tables/diagrams to add, this wasn't just me pointing an AI at a topic and pasting whatever came out. you can tell if you actually read through it.
-
 ## the parts
 
 1. **[[01-riscv-architecture|RISC-V Architecture]]**: QEMU setup, why RISC-V looks the way it does, the register set (GPRs/CSRs/FPRs), privilege levels (U/S/M-mode), a first look at Sv32 virtual memory, and the instruction formats. mostly reference material, not tied to this specific kernel.
