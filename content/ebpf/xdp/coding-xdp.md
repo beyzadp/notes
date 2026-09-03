@@ -38,7 +38,7 @@ void *data = (void *)(long)ctx->data;
 void *data_end = (void *)(long)ctx->data_end;
 ```
 
-`ctx->data`/`ctx->data_end` are `__u32` in the actual `xdp_md` struct (see [[what-is-xdp|the full struct]]), not pointers, so they get cast through `long` first to widen to pointer size before becoming a real `void *`. `data` is where the packet starts, `data_end` is one past where it ends, everything the program is allowed to touch sits between the two.
+`ctx->data`/`ctx->data_end` are `__u32` in the actual `xdp_md` struct (see [the full struct](https://beyzadp.github.io/ebpf/xdp/what-is-xdp#the-context-xdp_md)), not pointers, so they get cast through `long` first to widen to pointer size before becoming a real `void *`. `data` is where the packet starts, `data_end` is one past where it ends, everything the program is allowed to touch sits between the two.
 
 ## the bounds-check idiom
 

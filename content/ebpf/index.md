@@ -2,7 +2,7 @@
 title: "eBPF"
 ---
 
-ebpf lets you run small sandboxed programs inside the linux kernel without writing a kernel module or recompiling anything. the camp work so far has been on the networking side (xdp), but the same underlying mechanism, restricted c, a verifier, maps for state, shows up anywhere a hook exists: syscalls (lsm), tracepoints, the scheduler (sched_ext), even storage (xrp). more of those are probably getting their own notes here eventually, which is the reason this lives in its own folder instead of buried under networking.
+ebpf lets you run small sandboxed programs inside the linux kernel without writing a kernel module or recompiling anything. i went to a linux bootcamp run by the turkish linux users association ([the ebpf/xdp course](https://kamp.linux.org.tr/2026-yaz/kurslar/linux-kernel-ebpf-xdpye-giris/)), thats where i first started learning this. the camp work so far has been on the networking side (xdp), but the same underlying mechanism, restricted c, a verifier, maps for state, shows up anywhere a hook exists: syscalls (lsm), tracepoints, the scheduler (sched_ext), even storage (xrp). more of those are probably getting their own notes here eventually, which is the reason this lives in its own folder instead of buried under networking.
 
 ## whats here
 
