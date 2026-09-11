@@ -13,5 +13,5 @@ a lot of this text came from ai or research i copied in, but i picked whats in i
 - **security**: [[security-theory/chroot-and-seccomp|chroot and seccomp sandboxing]], and [[security-theory/namespace-sandboxing|namespace and mount-based sandboxing]].
 - **system programming**: [[system-programming/posix-threads/index|programming with POSIX threads]] (13 parts) covering concurrency, mutexes, deadlocks, and debugging.
 - **networking**: [[networking/index|ip addressing, packet encapsulation, nat and hole punching, dns trust, and why traceroute works]], notes from a networking camp.
-- **ebpf**: [[ebpf/index|what ebpf actually is, the verifier, and maps]], and [[ebpf/xdp/index|xdp]], writing real kernel-level packet-filtering programs from scratch.
+- **ebpf**: [[ebpf/index|what ebpf actually is, the verifier, and maps]], and [[ebpf/xdp/index|xdp]], writing real kernel-level packet-filtering programs from scratch, up through a maglev load balancer.
 

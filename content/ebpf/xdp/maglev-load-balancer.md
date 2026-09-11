@@ -33,13 +33,17 @@ second, what happens to the reply. an inline (nat mode) lb sits in the path of b
 
 **inline / nat mode**, every hop both ways goes through the lb:
 
-$$\text{client} \xrightarrow{\text{req}} \text{lb} \xrightarrow{\text{req}} \text{backend}$$
-$$\text{client} \xleftarrow{\text{reply}} \text{lb} \xleftarrow{\text{reply}} \text{backend}$$
+```
+client --req--> lb --req--> backend
+client <-reply- lb <-reply- backend
+```
 
 **direct server return**, the reply chain just has one less hop in it, the backend's arrow points straight back at the client instead of through the lb:
 
-$$\text{client} \xrightarrow{\text{req}} \text{lb} \xrightarrow{\text{req}} \text{backend}$$
-$$\text{client} \xleftarrow{\text{reply}} \text{backend}$$
+```
+client --req--> lb --req--> backend
+client <---------reply--------- backend
+```
 
 > an l4/dsr load balancer's job description is almost suspiciously small. look at a packet's ip/port, pick a backend, rewrite enough to get it there, and never touch that connection's reply traffic again. all the actual hard part is making that pick consistent, which is exactly the problem [[#introducing maglev|maglev]] exists to solve.
 
@@ -163,7 +167,9 @@ that formula is the only thing missing from the traces above, the round-robin fi
 
 at runtime none of this recomputing happens per packet, the table above is already built and sitting in memory. a packet just gets hashed once and the table does the rest:
 
-$$\huge \text{packet} \xrightarrow{h(\text{5-tuple}) \bmod M} \text{slot index} \xrightarrow{\text{table}[\text{index}]} \text{backend}$$
+```
+packet --h(5-tuple) mod M--> slot index --table[index]--> backend
+```
 
 one hash, one array index, done, thats the O(1) lookup half of the promise, and the minimal-disruption half is the table comparison a few paragraphs up.
 
