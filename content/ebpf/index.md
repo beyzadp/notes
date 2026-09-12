@@ -7,4 +7,4 @@ ebpf lets you run small sandboxed programs inside the linux kernel without writi
 ## whats here
 
 - **[[fundamentals|Fundamentals]]**: what ebpf actually is, the verifier, maps, and the load/verify/attach lifecycle every program goes through no matter which hook it ends up on.
-- **[[xdp/index|XDP]]** (3 parts): the networking hook, what problem it solves, building a program for it from the skeleton up through maps, `XDP_TX` replies, and wildcard acl rules, then putting all of that to work in a maglev load balancer.
+- **[[ebpf/xdp/index|XDP]]** (3 parts): the networking hook, what problem it solves, building a program for it from the skeleton up through maps, `XDP_TX` replies, and wildcard acl rules, then putting all of that to work in a maglev load balancer.
